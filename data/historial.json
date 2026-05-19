@@ -1,0 +1,11 @@
+[
+  {
+    "id_evento": "evt_20260519_154651",
+    "quien": "admin",
+    "accion": "pago_registrado",
+    "entidad": "12345678-9",
+    "valor_anterior": "sin_pago",
+    "valor_nuevo": "pago_20260519_154651",
+    "fecha": "2026-05-19T15:46:51.522407"
+  }
+]

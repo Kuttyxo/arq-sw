@@ -1,0 +1,42 @@
+[
+  {
+    "id_pago": "pago_20260519_152220",
+    "rut_alumno": "12345678-9",
+    "id_plan": "plan_mensual_8",
+    "monto": 35000,
+    "metodo": "efectivo",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-19T15:22:20.705790",
+    "codigo_transaccion": "TXN20260519152220"
+  },
+  {
+    "id_pago": "pago_20260519_152343",
+    "rut_alumno": "12345678-9",
+    "id_plan": "plan_mensual_8",
+    "monto": 35000,
+    "metodo": "efectivo",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-19T15:23:43.137548",
+    "codigo_transaccion": "TXN20260519152343"
+  },
+  {
+    "id_pago": "pago_20260519_152452",
+    "rut_alumno": "12345678-9",
+    "id_plan": "plan_mensual_8",
+    "monto": 35000,
+    "metodo": "efectivo",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-19T15:24:52.085079",
+    "codigo_transaccion": "TXN20260519152452"
+  },
+  {
+    "id_pago": "pago_20260519_154651",
+    "rut_alumno": "12345678-9",
+    "id_plan": "plan_mensual_8",
+    "monto": 35000,
+    "metodo": "efectivo",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-19T15:46:51.484543",
+    "codigo_transaccion": "TXN20260519154651"
+  }
+]
