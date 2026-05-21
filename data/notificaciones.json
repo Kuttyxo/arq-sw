@@ -1,0 +1,18 @@
+[
+  {
+    "id": "notif_1",
+    "rut_destino": "44.444.444-4",
+    "tipo": "clase",
+    "mensaje": "Tu clase de Box es hoy a las 18:00",
+    "fecha": "2026-05-21 13:38:11",
+    "pendiente": true
+  },
+  {
+    "id": "notif_2",
+    "rut_destino": "44.444.444-4",
+    "tipo": "pago",
+    "mensaje": "Pago recibido, gracias",
+    "fecha": "2026-05-21 13:38:11",
+    "pendiente": true
+  }
+]
