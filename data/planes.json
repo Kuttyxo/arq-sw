@@ -1,0 +1,16 @@
+{
+    "plan_mensual_8": {
+        "id": "plan_mensual_8",
+        "nombre": "Mensual 8 clases",
+        "precio": 35000,
+        "duracion_meses": 1,
+        "max_clases": 8
+    },
+    "plan_mensual_4": {
+        "id": "plan_mensual_4",
+        "nombre": "Mensual 4 clases",
+        "precio": 20000,
+        "duracion_meses": 1,
+        "max_clases": 4
+    }
+}

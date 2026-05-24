@@ -1,0 +1,22 @@
+{
+    "12345678-9": {
+        "rut": "12345678-9",
+        "nombre": "Ana Perez",
+        "email": "ana@mail.com",
+        "password": "1234",
+        "rol": "alumno",
+        "plan_activo": "plan_mensual_8",
+        "clases_restantes": 8,
+        "fecha_vencimiento": "2026-06-30"
+    },
+    "87654321-k": {
+        "rut": "87654321-k",
+        "nombre": "Luis Jefe",
+        "email": "luis@coliseo.cl",
+        "password": "admin123",
+        "rol": "admin",
+        "plan_activo": null,
+        "clases_restantes": 0,
+        "fecha_vencimiento": null
+    }
+}
