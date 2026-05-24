@@ -44,32 +44,33 @@ Nota: Si necesitas ver los logs de los servicios para depurar errores, usa run_a
 
 ## Estructura del Proyecto
 
-arq-sw/
-├── clientes/
-│   ├── cliente_admin.py
-│   ├── cliente_alumno.py
-│   └── cliente_profe.py
-├── data/
-│   ├── usuarios.json
-│   ├── planes.json
-│   ├── clases.json
-│   ├── reservas.json
-│   ├── pagos.json
-│   ├── historial.json
-│   ├── profesores.json
-│   └── notificaciones.json
-├── servicios/
-│   ├── soa_service_usrol.py
-│   ├── soa_service_plans.py
-│   ├── soa_service_pagos.py
-│   ├── soa_service_audit.py
-│   ├── soa_service_profe.py
-│   ├── soa_service_notif.py
-│   ├── soa_service_clase.py
-│   └── soa_service_reser.py
-├── soa_lib.py
-├── run_all.bat
-└── README.md
+- arq-sw/
+  - clientes/
+    - cliente_admin.py
+    - cliente_alumno.py
+    - cliente_profe.py
+  - data/
+    - usuarios.json
+    - planes.json
+    - clases.json
+    - reservas.json
+    - pagos.json
+    - historial.json
+    - profesores.json
+    - notificaciones.json
+  - servicios/
+    - soa_service_usrol.py
+    - soa_service_plans.py
+    - soa_service_pagos.py
+    - soa_service_audit.py
+    - soa_service_profe.py
+    - soa_service_notif.py
+    - soa_service_clase.py
+    - soa_service_reser.py
+  - soa_lib.py
+  - run_all.bat
+  - run_all_demo.bat
+  - README.md
 
 ## Funcionalidades por Perfil
 
