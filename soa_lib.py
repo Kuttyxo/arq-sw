@@ -20,4 +20,4 @@ def receive_message(sock):
         return None
     total_length = int(length_data.decode())
     data = sock.recv(total_length)
-    return length_data + data
+    return data

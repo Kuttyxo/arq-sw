@@ -46,7 +46,6 @@ def obtener_plan(id_plan):
             return p
     return None
 
-# segunda conexion al BUS para activar el plan en el servicio plans
 def llamar_plans(rut_alumno, id_plan, duracion_meses):
     sock2 = None
     try:
@@ -62,9 +61,8 @@ def llamar_plans(rut_alumno, id_plan, duracion_meses):
         data = receive_message(sock2)
         if not data:
             return False, "Sin respuesta de plans"
-        data_str = data.decode()
-        json_start = data_str.index("{")
-        resp = json.loads(data_str[json_start:])
+        cuerpo = data[5:].decode()
+        resp = json.loads(cuerpo)
         if resp.get("ok"):
             return True, None
         return False, resp.get("error", "Error en plans")
@@ -108,10 +106,8 @@ def registrar_pago(datos):
     guardar_pagos(pagos)
     print(f"[pagos] Pago guardado: {id_pago}")
 
-    # llamar a plans para activar el plan (segunda conexion al BUS)
     ok_plans, err_plans = llamar_plans(rut_alumno, id_plan, plan.get("duracion_meses", 1))
     if not ok_plans:
-        # rollback: eliminar el pago recien guardado
         pagos_actuales = cargar_pagos()
         pagos_sin_rollback = []
         for p in pagos_actuales:

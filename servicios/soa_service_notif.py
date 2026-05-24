@@ -11,7 +11,6 @@ NOMBRE_SERVICIO = "notif"
 
 RUTA_DATOS = os.path.join(os.path.dirname(__file__), "..", "data", "notificaciones.json")
 
-
 def cargar_notificaciones():
     try:
         with open(RUTA_DATOS, "r", encoding="utf-8") as f:
@@ -19,12 +18,10 @@ def cargar_notificaciones():
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
-
 def guardar_notificaciones(notificaciones):
     os.makedirs(os.path.dirname(RUTA_DATOS), exist_ok=True)
     with open(RUTA_DATOS, "w", encoding="utf-8") as f:
         json.dump(notificaciones, f, indent=2, ensure_ascii=False)
-
 
 def siguiente_id(notificaciones):
     maximo = 0
@@ -33,7 +30,6 @@ def siguiente_id(notificaciones):
         if nid.startswith("notif_") and nid[6:].isdigit():
             maximo = max(maximo, int(nid[6:]))
     return f"notif_{maximo + 1}"
-
 
 def accion_enviar(datos):
     rut_destino = datos.get("rut_destino")
@@ -55,7 +51,6 @@ def accion_enviar(datos):
     print(f"[NOTIFICACION] -> {rut_destino} ({tipo}): {mensaje}")
     return {"ok": True}
 
-
 def accion_listar_pendientes(datos):
     rut_destino = datos.get("rut_destino")
     if not rut_destino:
@@ -66,7 +61,6 @@ def accion_listar_pendientes(datos):
         if n.get("rut_destino") == rut_destino and n.get("pendiente")
     ]
     return {"ok": True, "notificaciones": pendientes}
-
 
 def procesar(datos_json):
     try:
@@ -81,7 +75,6 @@ def procesar(datos_json):
         return json.dumps(accion_listar_pendientes(datos))
     return json.dumps({"ok": False, "error": "Accion desconocida"})
 
-
 sock = connect_to_bus()
 try:
     send_message(sock, "sinit", NOMBRE_SERVICIO)
@@ -91,8 +84,7 @@ try:
         data = receive_message(sock)
         if not data:
             break
-        # CORRECCION: usar data[10:] en lugar de data[5:]
-        payload = data[10:].decode()
+        payload = data[5:].decode()
         print(f"Peticion recibida: {payload}")
         respuesta = procesar(payload)
         send_message(sock, NOMBRE_SERVICIO, respuesta)

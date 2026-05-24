@@ -83,8 +83,7 @@ try:
         data = receive_message(sock)
         if not data:
             break
-        # Saltar 10 bytes: 5 del largo + 5 del nombre del servicio
-        payload = data[10:].decode()
+        payload = data[5:].decode()
         respuesta = procesar(payload)
         send_message(sock, NOMBRE_SERVICIO, respuesta)
 except Exception as e:

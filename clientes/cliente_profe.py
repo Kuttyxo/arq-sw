@@ -1,7 +1,6 @@
 import os
 import sys
 
-# soa_lib.py vive en la raiz del repo; los clientes estan en clientes/.
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from soa_lib import connect_to_bus, send_message, receive_message
@@ -10,21 +9,16 @@ from datetime import date, datetime, timedelta
 
 NOMBRE_SERVICIO = "profe"
 
-
 def consultar(sock, peticion):
     send_message(sock, NOMBRE_SERVICIO, json.dumps(peticion))
     data = receive_message(sock)
     if not data:
         return None
-    # El BUS responde <5-servicio><OK><payload>; se quitan ambos prefijos.
     cuerpo = data[5:].decode()
-    if cuerpo[:2] == "OK":
-        cuerpo = cuerpo[2:]
     try:
         return json.loads(cuerpo)
     except json.JSONDecodeError:
         return None
-
 
 def imprimir_clases(clases):
     if not clases:
@@ -37,7 +31,6 @@ def imprimir_clases(clases):
         hora = c.get("hora", "?")
         print(f"  - [{idc}] {disc} | {fecha} {hora}")
 
-
 def ver_clases_hoy(sock, rut_profe):
     hoy = date.today().isoformat()
     resp = consultar(sock, {"accion": "clases_profe", "rut_profe": rut_profe, "fecha": hoy})
@@ -49,7 +42,6 @@ def ver_clases_hoy(sock, rut_profe):
         return
     print(f"\nClases de hoy ({hoy}):")
     imprimir_clases(resp.get("clases", []))
-
 
 def ver_alumnos_clase(sock):
     id_clase = input("Ingrese id de la clase: ").strip()
@@ -66,7 +58,6 @@ def ver_alumnos_clase(sock):
         print("  (sin alumnos)")
     for a in alumnos:
         print(f"  - {a.get('rut')} | {a.get('nombre')}")
-
 
 def ver_clases_semana(sock, rut_profe):
     resp = consultar(sock, {"accion": "clases_profe", "rut_profe": rut_profe})
@@ -88,7 +79,6 @@ def ver_clases_semana(sock, rut_profe):
             semana.append(c)
     print(f"\nClases de la semana ({hoy.isoformat()} a {fin.isoformat()}):")
     imprimir_clases(semana)
-
 
 sock = connect_to_bus()
 try:

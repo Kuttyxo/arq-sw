@@ -112,7 +112,7 @@ try:
         data = receive_message(sock)
         if not data:
             break
-        payload = data[10:].decode()
+        payload = data[5:].decode()
         respuesta = procesar(payload)
         send_message(sock, NOMBRE_SERVICIO, respuesta)
 except Exception as e:

@@ -10,7 +10,6 @@ NOMBRE_SERVICIO = "profe"
 
 RUTA_DATOS = os.path.join(os.path.dirname(__file__), "..", "data", "profesores.json")
 
-
 def cargar_profesores():
     try:
         with open(RUTA_DATOS, "r", encoding="utf-8") as f:
@@ -18,12 +17,10 @@ def cargar_profesores():
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
-
 def guardar_profesores(profesores):
     os.makedirs(os.path.dirname(RUTA_DATOS), exist_ok=True)
     with open(RUTA_DATOS, "w", encoding="utf-8") as f:
         json.dump(profesores, f, indent=2, ensure_ascii=False)
-
 
 def llamar_servicio(nombre_servicio, peticion, timeout=5):
     s = None
@@ -34,15 +31,13 @@ def llamar_servicio(nombre_servicio, peticion, timeout=5):
         data = receive_message(s)
         if not data:
             return None
-        # Saltar 10 bytes: 5 del largo + 5 del nombre del servicio
-        cuerpo = data[10:].decode()
+        cuerpo = data[5:].decode()
         return json.loads(cuerpo)
     except Exception:
         return None
     finally:
         if s is not None:
             s.close()
-
 
 def accion_crear_profe(datos):
     rut = datos.get("rut")
@@ -57,10 +52,8 @@ def accion_crear_profe(datos):
     guardar_profesores(profesores)
     return {"ok": True}
 
-
 def accion_listar_profes():
     return {"ok": True, "profesores": cargar_profesores()}
-
 
 def accion_asistencia(datos):
     id_clase = datos.get("id_clase")
@@ -87,7 +80,6 @@ def accion_asistencia(datos):
     alumnos = [{"rut": rut, "nombre": nombres.get(rut, "")} for rut in ruts]
     return {"ok": True, "alumnos": alumnos}
 
-
 def accion_clases_profe(datos):
     rut_profe = datos.get("rut_profe")
     if not rut_profe:
@@ -111,17 +103,13 @@ def accion_clases_profe(datos):
     ]
     return {"ok": True, "clases": agenda}
 
-
 def procesar(datos_json):
-    print(f"[DEBUG] datos_json recibido: '{datos_json}'")
     try:
         datos = json.loads(datos_json)
-    except json.JSONDecodeError as e:
-        print(f"[DEBUG] Error JSON: {e}")
+    except json.JSONDecodeError:
         return json.dumps({"ok": False, "error": "JSON invalido"})
-    
+
     accion = datos.get("accion")
-    print(f"[DEBUG] accion: {accion}")
     if accion == "crear_profe":
         return json.dumps(accion_crear_profe(datos))
     if accion == "listar_profes":
@@ -132,7 +120,6 @@ def procesar(datos_json):
         return json.dumps(accion_clases_profe(datos))
     return json.dumps({"ok": False, "error": "Accion desconocida"})
 
-
 sock = connect_to_bus()
 try:
     send_message(sock, "sinit", NOMBRE_SERVICIO)
@@ -142,8 +129,7 @@ try:
         data = receive_message(sock)
         if not data:
             break
-        # Cambio clave: usar data[10:] en lugar de data[5:]
-        payload = data[10:].decode()
+        payload = data[5:].decode()
         print(f"Peticion recibida: {payload}")
         respuesta = procesar(payload)
         send_message(sock, NOMBRE_SERVICIO, respuesta)

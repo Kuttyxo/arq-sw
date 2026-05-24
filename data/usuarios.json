@@ -6,7 +6,7 @@
         "password": "1234",
         "rol": "alumno",
         "plan_activo": "plan_mensual_8",
-        "clases_restantes": 8,
+        "clases_restantes": 7,
         "fecha_vencimiento": "2026-06-30"
     },
     "87654321-k": {
@@ -15,6 +15,16 @@
         "email": "luis@coliseo.cl",
         "password": "admin123",
         "rol": "admin",
+        "plan_activo": null,
+        "clases_restantes": 0,
+        "fecha_vencimiento": null
+    },
+    "11111111-1": {
+        "rut": "11111111-1",
+        "nombre": "Profesor Juan",
+        "email": "juan@coliseo.cl",
+        "password": "1234",
+        "rol": "profesor",
         "plan_activo": null,
         "clases_restantes": 0,
         "fecha_vencimiento": null
