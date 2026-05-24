@@ -1,0 +1,10 @@
+[
+  {
+    "id_reserva": "292570d5",
+    "rut_alumno": "12345678-9",
+    "id_clase": "clase002",
+    "fecha_reserva": "2026-05-21 15:01:27",
+    "estado": "cancelada",
+    "fecha_cancelacion": "2026-05-21 15:02:33"
+  }
+]

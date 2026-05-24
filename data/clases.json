@@ -1,0 +1,22 @@
+[
+  {
+    "id_clase": "clase001",
+    "disciplina": "CrossFit",
+    "rut_profe": "11111111-1",
+    "fecha": "2026-06-02",
+    "hora": "08:00",
+    "cupos_max": 10,
+    "cupos_disponibles": 10,
+    "alumnos_inscritos": []
+  },
+  {
+    "id_clase": "clase002",
+    "disciplina": "Calistenia",
+    "rut_profe": "22222222-2",
+    "fecha": "2026-06-02",
+    "hora": "10:00",
+    "cupos_max": 8,
+    "cupos_disponibles": 8,
+    "alumnos_inscritos": []
+  }
+]
