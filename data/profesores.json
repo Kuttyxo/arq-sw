@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "rut": "11111111-1",
+        "nombre": "Profesor Juan",
+        "especialidad": "Yoga"
+    }
+]

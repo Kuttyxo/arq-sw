@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -31,8 +32,12 @@ def llamar_servicio(nombre_servicio, peticion, timeout=5):
         data = receive_message(s)
         if not data:
             return None
-        cuerpo = data[5:].decode()
-        return json.loads(cuerpo)
+        respuesta_str = data.decode()
+        match = re.search(r'\{.*\}', respuesta_str)
+        if match:
+            return json.loads(match.group())
+        else:
+            return None
     except Exception:
         return None
     finally:

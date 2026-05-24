@@ -1,9 +1,9 @@
 [
-  {
-    "id_reserva": "aea29fef",
-    "rut_alumno": "12345678-9",
-    "id_clase": "clase001",
-    "fecha_reserva": "2026-05-24 15:13:18",
-    "estado": "activa"
-  }
+    {
+        "id_reserva": "reserva001",
+        "rut_alumno": "12345678-9",
+        "id_clase": "clase001",
+        "fecha_reserva": "2026-05-24 10:00:00",
+        "estado": "activa"
+    }
 ]

@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -15,10 +16,13 @@ def consultar(sock, peticion):
     if not data:
         return None
     cuerpo = data[5:].decode()
-    try:
-        return json.loads(cuerpo)
-    except json.JSONDecodeError:
-        return None
+    match = re.search(r'\{.*\}', cuerpo)
+    if match:
+        try:
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            return None
+    return None
 
 def imprimir_clases(clases):
     if not clases:
