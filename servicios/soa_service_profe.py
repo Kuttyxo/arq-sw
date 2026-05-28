@@ -65,15 +65,13 @@ def accion_asistencia(datos):
     if not id_clase:
         return {"ok": False, "error": "Falta parametro: id_clase"}
 
-    resp_reser = llamar_servicio("reser", {"accion": "reservas_por_clase", "id_clase": id_clase})
-    if resp_reser is None:
-        return {"ok": False, "error": "Servicio 'reser' no disponible"}
-    if not resp_reser.get("ok"):
-        return {"ok": False, "error": resp_reser.get("error", "Error consultando reservas")}
+    resp_clase = llamar_servicio("clase", {"accion": "obtener_clase", "id_clase": id_clase})
+    if resp_clase is None:
+        return {"ok": False, "error": "Servicio 'clase' no disponible"}
+    if not resp_clase.get("ok"):
+        return {"ok": False, "error": resp_clase.get("error", "Clase no encontrada")}
 
-    reservas = resp_reser.get("reservas", [])
-    ruts = [r.get("rut_alumno") or r.get("rut") for r in reservas]
-    ruts = [r for r in ruts if r]
+    ruts = resp_clase.get("clase", {}).get("alumnos_inscritos", [])
 
     nombres = {}
     resp_usrol = llamar_servicio("usrol", {"accion": "listar"})
