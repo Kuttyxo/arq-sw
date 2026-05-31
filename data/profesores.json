@@ -1,7 +1,22 @@
 [
-    {
-        "rut": "11111111-1",
-        "nombre": "Profesor Juan",
-        "especialidad": "Yoga"
-    }
+  {
+    "rut": "11111111-1",
+    "nombre": "Profesor Juan",
+    "especialidad": "Yoga"
+  },
+  {
+    "rut": "22222222-2",
+    "nombre": "Maria Soto",
+    "especialidad": "Spinning"
+  },
+  {
+    "rut": "33333333-3",
+    "nombre": "Carlos Mendez",
+    "especialidad": "Crossfit"
+  },
+  {
+    "rut": "44444444-4",
+    "nombre": "Camila Rojas",
+    "especialidad": "Pilates"
+  }
 ]

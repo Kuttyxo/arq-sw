@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": "notif_1",
+    "rut_destino": "12345678-9",
+    "tipo": "reserva",
+    "mensaje": "Tu reserva para la clase de Yoga ha sido confirmada.",
+    "fecha": "2026-05-24 10:00:00",
+    "pendiente": true
+  },
+  {
+    "id": "notif_2",
+    "rut_destino": "12345678-9",
+    "tipo": "pago",
+    "mensaje": "Tu pago del Plan Mensual 8 fue procesado con exito.",
+    "fecha": "2026-05-19 15:46:51",
+    "pendiente": false
+  },
+  {
+    "id": "notif_3",
+    "rut_destino": "12345678-9",
+    "tipo": "recordatorio",
+    "mensaje": "Recuerda que tu clase de Yoga es manana a las 10:00.",
+    "fecha": "2026-05-23 18:00:00",
+    "pendiente": true
+  },
+  {
+    "id": "notif_4",
+    "rut_destino": "11111111-1",
+    "tipo": "clase",
+    "mensaje": "Tienes una clase de Yoga programada para hoy.",
+    "fecha": "2026-05-24 08:00:00",
+    "pendiente": true
+  }
+]
