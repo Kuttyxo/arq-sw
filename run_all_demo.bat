@@ -25,9 +25,9 @@ timeout /t 5 /nobreak > nul
 echo        Servicios listos.
 
 echo [3/3] Abriendo clientes...
-start "CLIENTE ADMIN" cmd /k "cd /d C:\Users\Isidora\arq-sw && py clientes/cliente_admin.py"
-start "CLIENTE ALUMNO" cmd /k "cd /d C:\Users\Isidora\arq-sw && py clientes/cliente_alumno.py"
-start "CLIENTE PROFESOR" cmd /k "cd /d C:\Users\Isidora\arq-sw && py clientes/cliente_profe.py"
+start "CLIENTE ADMIN" cmd /k "cd /d %~dp0 && py clientes/cliente_admin.py"
+start "CLIENTE ALUMNO" cmd /k "cd /d %~dp0 && py clientes/cliente_alumno.py"
+start "CLIENTE PROFESOR" cmd /k "cd /d %~dp0 && py clientes/cliente_profe.py"
 
 echo.
 echo ========================================

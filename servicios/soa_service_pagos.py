@@ -25,26 +25,22 @@ def cargar_usuarios():
     if os.path.exists(ruta):
         with open(ruta, 'r') as f:
             return json.load(f)
-    return []
+    return {}
 
 def cargar_planes():
     ruta = os.path.join(DATA_DIR, "planes.json")
     if os.path.exists(ruta):
         with open(ruta, 'r') as f:
             return json.load(f)
-    return []
+    return {}
 
 def usuario_existe(rut):
-    for u in cargar_usuarios():
-        if u.get("rut") == rut:
-            return True
-    return False
+    usuarios = cargar_usuarios()
+    return rut in usuarios
 
 def obtener_plan(id_plan):
-    for p in cargar_planes():
-        if p.get("id") == id_plan:
-            return p
-    return None
+    planes = cargar_planes()
+    return planes.get(id_plan)
 
 def llamar_plans(rut_alumno, id_plan, duracion_meses):
     sock2 = None
