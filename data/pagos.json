@@ -10,26 +10,6 @@
     "codigo_transaccion": "TXN20260519152220"
   },
   {
-    "id_pago": "pago_20260519_152343",
-    "rut_alumno": "12345678-9",
-    "id_plan": "plan_mensual_8",
-    "monto": 35000,
-    "metodo": "efectivo",
-    "estado": "aprobado",
-    "fecha_pago": "2026-05-19T15:23:43.137548",
-    "codigo_transaccion": "TXN20260519152343"
-  },
-  {
-    "id_pago": "pago_20260519_152452",
-    "rut_alumno": "12345678-9",
-    "id_plan": "plan_mensual_8",
-    "monto": 35000,
-    "metodo": "efectivo",
-    "estado": "aprobado",
-    "fecha_pago": "2026-05-19T15:24:52.085079",
-    "codigo_transaccion": "TXN20260519152452"
-  },
-  {
     "id_pago": "pago_20260519_154651",
     "rut_alumno": "12345678-9",
     "id_plan": "plan_mensual_8",
@@ -38,5 +18,45 @@
     "estado": "aprobado",
     "fecha_pago": "2026-05-19T15:46:51.484543",
     "codigo_transaccion": "TXN20260519154651"
+  },
+  {
+    "id_pago": "pago_20260520_101530",
+    "rut_alumno": "98765432-1",
+    "id_plan": "plan_mensual_4",
+    "monto": 20000,
+    "metodo": "digital",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-20T10:15:30.224155",
+    "codigo_transaccion": "TXN20260520101530"
+  },
+  {
+    "id_pago": "pago_20260520_184405",
+    "rut_alumno": "55566677-8",
+    "id_plan": "plan_mensual_8",
+    "monto": 35000,
+    "metodo": "transferencia",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-20T18:44:05.812340",
+    "codigo_transaccion": "TXN20260520184405"
+  },
+  {
+    "id_pago": "pago_20260521_093012",
+    "rut_alumno": "98765432-1",
+    "id_plan": "plan_mensual_4",
+    "monto": 20000,
+    "metodo": "digital",
+    "estado": "rechazado",
+    "fecha_pago": "2026-05-21T09:30:12.118420",
+    "codigo_transaccion": "TXN20260521093012"
+  },
+  {
+    "id_pago": "pago_20260522_120044",
+    "rut_alumno": "12345678-9",
+    "id_plan": "plan_mensual_8",
+    "monto": 35000,
+    "metodo": "digital",
+    "estado": "aprobado",
+    "fecha_pago": "2026-05-22T12:00:44.901230",
+    "codigo_transaccion": "TXN20260522120044"
   }
 ]

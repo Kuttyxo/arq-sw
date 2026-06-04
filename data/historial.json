@@ -1,5 +1,23 @@
 [
   {
+    "id_evento": "evt_20260519_152221",
+    "quien": "12345678-9",
+    "accion": "pago_registrado",
+    "entidad": "12345678-9",
+    "valor_anterior": "sin_pago",
+    "valor_nuevo": "pago_20260519_152220",
+    "fecha": "2026-05-19T15:22:21.014321"
+  },
+  {
+    "id_evento": "evt_20260519_152222",
+    "quien": "sistema",
+    "accion": "cuenta_activada",
+    "entidad": "12345678-9",
+    "valor_anterior": "inactiva",
+    "valor_nuevo": "activa",
+    "fecha": "2026-05-19T15:22:22.443201"
+  },
+  {
     "id_evento": "evt_20260519_154651",
     "quien": "admin",
     "accion": "pago_registrado",
@@ -7,5 +25,77 @@
     "valor_anterior": "sin_pago",
     "valor_nuevo": "pago_20260519_154651",
     "fecha": "2026-05-19T15:46:51.522407"
+  },
+  {
+    "id_evento": "evt_20260520_101533",
+    "quien": "98765432-1",
+    "accion": "pago_registrado",
+    "entidad": "98765432-1",
+    "valor_anterior": "sin_pago",
+    "valor_nuevo": "pago_20260520_101530",
+    "fecha": "2026-05-20T10:15:33.105602"
+  },
+  {
+    "id_evento": "evt_20260520_101535",
+    "quien": "sistema",
+    "accion": "plan_asignado",
+    "entidad": "98765432-1",
+    "valor_anterior": "sin_plan",
+    "valor_nuevo": "plan_mensual_4",
+    "fecha": "2026-05-20T10:15:35.882710"
+  },
+  {
+    "id_evento": "evt_20260520_184407",
+    "quien": "55566677-8",
+    "accion": "pago_registrado",
+    "entidad": "55566677-8",
+    "valor_anterior": "sin_pago",
+    "valor_nuevo": "pago_20260520_184405",
+    "fecha": "2026-05-20T18:44:07.005122"
+  },
+  {
+    "id_evento": "evt_20260520_184409",
+    "quien": "sistema",
+    "accion": "cuenta_activada",
+    "entidad": "55566677-8",
+    "valor_anterior": "inactiva",
+    "valor_nuevo": "activa",
+    "fecha": "2026-05-20T18:44:09.234880"
+  },
+  {
+    "id_evento": "evt_20260521_093014",
+    "quien": "98765432-1",
+    "accion": "pago_rechazado",
+    "entidad": "98765432-1",
+    "valor_anterior": "intento",
+    "valor_nuevo": "rechazado",
+    "fecha": "2026-05-21T09:30:14.420101"
+  },
+  {
+    "id_evento": "evt_20260521_150233",
+    "quien": "12345678-9",
+    "accion": "reserva_cancelada",
+    "entidad": "292570d5",
+    "valor_anterior": "activa",
+    "valor_nuevo": "cancelada",
+    "fecha": "2026-05-21T15:02:33.512098"
+  },
+  {
+    "id_evento": "evt_20260522_120046",
+    "quien": "admin",
+    "accion": "plan_modificado",
+    "entidad": "plan_mensual_8",
+    "valor_anterior": "precio:33000",
+    "valor_nuevo": "precio:35000",
+    "fecha": "2026-05-22T12:00:46.118933"
+  },
+  {
+    "id_evento": "evt_20260523_083000",
+    "quien": "98765432-1",
+    "accion": "reserva_cancelada",
+    "entidad": "res00006",
+    "valor_anterior": "activa",
+    "valor_nuevo": "cancelada",
+    "fecha": "2026-05-23T08:30:00.667014"
   }
 ]
