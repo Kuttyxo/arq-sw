@@ -1,0 +1,113 @@
+COLISEO OS — Modulo de Cristobal (servicios profe + notif)
+============================================================
+
+CONTENIDO DE LA CARPETA
+-----------------------
+  soa_lib.py                   Libreria del profesor (sin modificar)
+  servicios/soa_service_profe.py   Servicio 'profe' (crear, listar, asistencia, clases_profe)
+  servicios/soa_service_notif.py   Servicio 'notif' (enviar, listar_pendientes)
+  clientes/cliente_profe.py    Menu interactivo del perfil Profesor
+  data/profesores.json         Persistencia de profesores (inicia vacio: [])
+  data/notificaciones.json     Persistencia de notificaciones (inicia vacio: [])
+  prueba_local.py              Script de prueba automatica (no se entrega, es para ti)
+
+
+REQUISITOS
+----------
+- Docker corriendo.
+- Python 3 (probado con 3.11).
+
+
+PASO 1 — Levantar el BUS del profesor
+-------------------------------------
+  docker run -d --name soabus -p 5000:5000 jrgiadach/soabus:v1
+  docker ps                  # confirmar que esta "Up" y mapea 0.0.0.0:5000
+
+Para detenerlo despues:
+  docker stop soabus && docker rm soabus
+
+
+PASO 2 — Levantar los servicios (2 terminales, desde esta carpeta)
+------------------------------------------------------------------
+  Terminal A:
+    python3 servicios/soa_service_profe.py
+    # esperado: Servicio 'profe' registrado: b'...sinitprofe'
+
+  Terminal B:
+    python3 servicios/soa_service_notif.py
+    # esperado: Servicio 'notif' registrado: b'...sinitnotif'
+
+Dejalas corriendo. Si las cierras se desregistran del BUS.
+
+
+PASO 3a — Probar TODO lo que funciona solo (recomendado)
+---------------------------------------------------------
+En una tercera terminal, desde esta carpeta:
+
+  python3 prueba_local.py
+
+Vas a ver 11 bloques con la respuesta de cada llamada. Lo esperado:
+  - 1, 4, 8 (x2)   -> {"ok": true}
+  - 2 (RUT dup)    -> {"ok": false, "error": "RUT duplicado"}
+  - 3 (sin nombre) -> {"ok": false, "error": "Faltan parametros: ..."}
+  - 5              -> {"ok": true, "profesores": [Ana, Pedro]}
+  - 6 (asistencia) -> {"ok": false, "error": "Servicio 'reser' no disponible"}
+                       <-- ESPERADO: el servicio 'reser' lo hace Benjamin y aun no existe
+  - 7              -> {"ok": false, "error": "Accion desconocida"}
+  - 9 (sin msg)    -> {"ok": false, "error": "Faltan parametros: ..."}
+  - 10             -> {"ok": true, "notificaciones": [2 items]}
+  - 11             -> {"ok": true, "notificaciones": []}
+
+
+PASO 3b — Probar el cliente interactivo del Profesor
+----------------------------------------------------
+En una tercera terminal:
+
+  python3 clientes/cliente_profe.py
+  Ingrese su RUT de profesor: 11.111.111-1
+
+Menu disponible:
+  1. Ver mis clases de hoy
+  2. Ver lista de alumnos de una clase
+  3. Ver mis clases de la semana
+  9. Salir
+
+IMPORTANTE: las opciones 1, 2 y 3 dependen de los servicios 'reser',
+'usrol' y 'clase' que hacen tus companeros y todavia no existen.
+Vas a ver respuestas tipo:
+
+  Error: Servicio 'reser' no disponible
+  Error: Servicio 'clase' no disponible
+
+Eso ES lo esperado y demuestra que el cliente maneja bien la
+degradacion cuando faltan servicios externos.
+
+Cuando Benjamin (reser), Isidora (usrol) e Ignacia (clase) levanten
+sus servicios contra el mismo BUS, estas opciones empezaran a
+funcionar SIN cambiar tu codigo.
+
+
+PASO 4 — Verificar persistencia
+-------------------------------
+Despues de correr prueba_local.py, revisa:
+
+  cat data/profesores.json
+  cat data/notificaciones.json
+
+Deben contener los registros. Reinicia los servicios (Ctrl+C en sus
+terminales y vuelve a lanzarlos) y vuelve a correr prueba_local.py:
+los datos siguen ahi porque viven en JSON.
+
+
+NOTAS TECNICAS
+--------------
+- soa_lib.py es la copia del profesor. No tocar.
+- Los servicios llaman al BUS en localhost:5000. Si cambias el host
+  del BUS, tendras que ajustar connect_to_bus en soa_lib.py.
+- El BUS responde con prefijo <5-largo><5-nombreservicio><OK><payload>.
+  El snippet 'data[5:]' del documento del curso deja "OK" pegado al
+  JSON y rompe json.loads. Por eso en este codigo se quita tambien
+  el prefijo "OK" antes de parsear.
+- 'asistencia' necesita una accion 'reservas_por_clase' en el servicio
+  'reser'. Hay que coordinarlo con Benjamin (no esta en la tabla del
+  documento).

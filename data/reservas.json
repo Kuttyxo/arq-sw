@@ -1,9 +1,74 @@
 [
-    {
-        "id_reserva": "reserva001",
-        "rut_alumno": "12345678-9",
-        "id_clase": "clase001",
-        "fecha_reserva": "2026-05-24 10:00:00",
-        "estado": "activa"
-    }
+  {
+    "id_reserva": "292570d5",
+    "rut_alumno": "12345678-9",
+    "id_clase": "clase002",
+    "fecha_reserva": "2026-05-21 15:01:27",
+    "estado": "cancelada",
+    "fecha_cancelacion": "2026-05-21 15:02:33"
+  },
+  {
+    "id_reserva": "res00002",
+    "rut_alumno": "12345678-9",
+    "id_clase": "clase001",
+    "fecha_reserva": "2026-05-22 09:15:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00003",
+    "rut_alumno": "12345678-9",
+    "id_clase": "clase005",
+    "fecha_reserva": "2026-05-22 09:20:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00004",
+    "rut_alumno": "12345678-9",
+    "id_clase": "clase007",
+    "fecha_reserva": "2026-05-23 11:00:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00005",
+    "rut_alumno": "98765432-1",
+    "id_clase": "clase003",
+    "fecha_reserva": "2026-05-22 14:00:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00006",
+    "rut_alumno": "98765432-1",
+    "id_clase": "clase004",
+    "fecha_reserva": "2026-05-22 14:05:00",
+    "estado": "cancelada",
+    "fecha_cancelacion": "2026-05-23 08:30:00"
+  },
+  {
+    "id_reserva": "res00007",
+    "rut_alumno": "98765432-1",
+    "id_clase": "clase006",
+    "fecha_reserva": "2026-05-23 10:00:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00008",
+    "rut_alumno": "55566677-8",
+    "id_clase": "clase001",
+    "fecha_reserva": "2026-05-21 16:00:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00009",
+    "rut_alumno": "55566677-8",
+    "id_clase": "clase004",
+    "fecha_reserva": "2026-05-22 17:30:00",
+    "estado": "activa"
+  },
+  {
+    "id_reserva": "res00010",
+    "rut_alumno": "55566677-8",
+    "id_clase": "clase008",
+    "fecha_reserva": "2026-05-23 12:00:00",
+    "estado": "activa"
+  }
 ]

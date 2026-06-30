@@ -6,7 +6,7 @@
         "password": "1234",
         "rol": "alumno",
         "plan_activo": "plan_mensual_8",
-        "clases_restantes": 7,
+        "clases_restantes": 4,
         "fecha_vencimiento": "2026-06-30"
     },
     "87654321-k": {
@@ -28,5 +28,25 @@
         "plan_activo": null,
         "clases_restantes": 0,
         "fecha_vencimiento": null
+    },
+    "98765432-1": {
+    "rut": "98765432-1",
+    "nombre": "Diego Fuentes",
+    "email": "diego@mail.com",
+    "password": "1234",
+    "rol": "alumno",
+    "plan_activo": "plan_mensual_4",
+    "clases_restantes": 1,
+    "fecha_vencimiento": "2026-06-30"
+    },
+    "55566677-8": {
+        "rut": "55566677-8",
+        "nombre": "Valentina Mora",
+        "email": "vale@mail.com",
+        "password": "1234",
+        "rol": "alumno",
+        "plan_activo": "plan_mensual_8",
+        "clases_restantes": 6,
+        "fecha_vencimiento": "2026-06-30"
     }
 }

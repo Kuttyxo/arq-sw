@@ -84,7 +84,13 @@ try:
         if not data:
             break
         payload = data[5:].decode()
+        try:
+            accion = json.loads(payload).get("accion", "?")
+        except Exception:
+            accion = "?"
+        print(f"[usrol] <- {accion}")
         respuesta = procesar(payload)
+        print(f"[usrol] -> ok")
         send_message(sock, NOMBRE_SERVICIO, respuesta)
 except Exception as e:
     print(f"Error: {e}")

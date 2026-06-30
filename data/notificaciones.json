@@ -4,7 +4,7 @@
     "rut_destino": "12345678-9",
     "tipo": "reserva",
     "mensaje": "Tu reserva para la clase de Yoga ha sido confirmada.",
-    "fecha": "2026-05-22 09:15:00",
+    "fecha": "2026-05-24 10:00:00",
     "pendiente": true
   },
   {
@@ -29,70 +29,6 @@
     "tipo": "clase",
     "mensaje": "Tienes una clase de Yoga programada para hoy.",
     "fecha": "2026-05-24 08:00:00",
-    "pendiente": true
-  },
-  {
-    "id": "notif_5",
-    "rut_destino": "98765432-1",
-    "tipo": "pago",
-    "mensaje": "Tu pago del Plan Mensual 4 fue procesado con exito.",
-    "fecha": "2026-05-20 10:15:33",
-    "pendiente": false
-  },
-  {
-    "id": "notif_6",
-    "rut_destino": "98765432-1",
-    "tipo": "reserva",
-    "mensaje": "Tu reserva para la clase de Crossfit ha sido confirmada.",
-    "fecha": "2026-05-22 14:00:00",
-    "pendiente": true
-  },
-  {
-    "id": "notif_7",
-    "rut_destino": "98765432-1",
-    "tipo": "cancelacion",
-    "mensaje": "Tu reserva para la clase de Pilates fue cancelada.",
-    "fecha": "2026-05-23 08:30:00",
-    "pendiente": true
-  },
-  {
-    "id": "notif_8",
-    "rut_destino": "98765432-1",
-    "tipo": "alerta_pago",
-    "mensaje": "Tu intento de pago del Plan Mensual 4 fue rechazado. Intenta nuevamente.",
-    "fecha": "2026-05-21 09:30:14",
-    "pendiente": true
-  },
-  {
-    "id": "notif_9",
-    "rut_destino": "55566677-8",
-    "tipo": "pago",
-    "mensaje": "Tu pago del Plan Mensual 8 fue procesado con exito.",
-    "fecha": "2026-05-20 18:44:07",
-    "pendiente": false
-  },
-  {
-    "id": "notif_10",
-    "rut_destino": "55566677-8",
-    "tipo": "reserva",
-    "mensaje": "Tu reserva para la clase de Pilates ha sido confirmada.",
-    "fecha": "2026-05-22 17:30:00",
-    "pendiente": true
-  },
-  {
-    "id": "notif_11",
-    "rut_destino": "55566677-8",
-    "tipo": "vencimiento",
-    "mensaje": "Tu plan vence el 30/06/2026. Renuevalo para seguir reservando clases.",
-    "fecha": "2026-05-23 09:00:00",
-    "pendiente": true
-  },
-  {
-    "id": "notif_12",
-    "rut_destino": "11111111-1",
-    "tipo": "clase",
-    "mensaje": "Tienes 2 alumnos inscritos en la clase de Yoga del 28/06/2026.",
-    "fecha": "2026-05-24 09:00:00",
     "pendiente": true
   }
 ]
